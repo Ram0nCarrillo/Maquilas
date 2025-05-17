@@ -1,0 +1,41 @@
+CREATE DATABASE maquilas;
+
+USE maquilas;
+
+
+CREATE TABLE area (
+  id int NOT NULL AUTO_INCREMENT,
+  corte varchar(45) DEFAULT NULL,
+  ensamble varchar(45) DEFAULT NULL,
+  empaque varchar(45) DEFAULT NULL,
+  acabado varchar(45) DEFAULT NULL,
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE operador (
+  id int NOT NULL AUTO_INCREMENT,
+  nombre varchar(45) DEFAULT NULL,
+  sexo char(1) DEFAULT NULL,
+  fecha_ingreso date DEFAULT NULL,
+  turno varchar(45) DEFAULT NULL,
+  salario decimal DEFAULT NULL,
+  id_area int DEFAULT NULL,
+  id_supervisor int DEFAULT NULL,
+  PRIMARY KEY (id),
+  KEY fk_operadorArea_idx (id_area),
+  KEY fk_operadorSupervisor_idx (id_supervisor),
+  CONSTRAINT fk_operadorArea FOREIGN KEY (id_area) REFERENCES area (id),
+  CONSTRAINT fk_operadorSupervisor FOREIGN KEY (id_supervisor) REFERENCES supervisor (id)
+);
+
+CREATE TABLE `supervisor` (
+  id int NOT NULL AUTO_INCREMENT,
+  nombre varchar(45) NOT NULL,
+  telefono varchar(45) DEFAULT NULL,
+  correo varchar(100) DEFAULT NULL,
+  turno varchar(45) DEFAULT NULL,
+  id_area int DEFAULT NULL,
+  PRIMARY KEY (id),
+  KEY flsupervisorArea_idx (id_area),
+  CONSTRAINT flsupervisorArea FOREIGN KEY (id_area) REFERENCES area (id)
+);
