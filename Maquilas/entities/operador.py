@@ -12,7 +12,14 @@ class Operador(Base):
     turno = Column(String)
     salario = Column(DECIMAL)
 
-id_supervisor = Column(Integer, ForeignKey("supervisor.id"))
-supervisores = relationship("Supervisor", back_populates="operadores")
-id_area = Column(Integer, ForeignKey("area.id"))
-area = relationship("Area", back_populates="operadores")    
+    id_supervisor = Column(Integer, ForeignKey("supervisor.id"))
+    supervisores = relationship("Supervisor", back_populates="operadores")
+    id_area = Column(Integer, ForeignKey("area.id"))
+    area = relationship("Area", back_populates="operadores")    
+
+    id_supervisor = Column(Integer, ForeignKey("supervisor.id"))
+    id_area = Column(Integer, ForeignKey("area.id"))
+
+    # Relaciones
+    supervisor = relationship("Supervisor", back_populates="operadores")
+    area = relationship("Area", back_populates="operadores")
