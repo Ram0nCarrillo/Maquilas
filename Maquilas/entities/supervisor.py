@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, ForeignKey, DECIMAL
+from sqlalchemy import Column, Integer, String, ForeignKey, DECIMAL, Date
 from sqlalchemy.orm import relationship
 from persistence.base import Base
 
@@ -7,6 +7,7 @@ class Supervisor(Base):
     id = Column(Integer, primary_key = True)
     nombre = Column(String)
     sexo = Column(String)
+    fecha_ingreso = Column(Date)
     salario = Column(DECIMAL)
     telefono = Column(String)
     correo = Column(String)
