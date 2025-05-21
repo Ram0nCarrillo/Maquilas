@@ -13,8 +13,9 @@ class Supervisor(Base):
     correo = Column(String)
     turno = Column(String)
     
+    # Clave foranea hacia el area que supervisa 
     id_area = Column(Integer, ForeignKey("area.id"))
+    
+    # Relaciones
     area = relationship("Area", back_populates="supervisores")
-
-    # Relación con operadores
     operadores = relationship("Operador", back_populates="supervisor")

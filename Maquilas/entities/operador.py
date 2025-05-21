@@ -9,13 +9,9 @@ class Operador(Base):
     sexo = Column(CHAR)
     fecha_ingreso = Column(Date)
     turno = Column(String)
-    salario = Column(DECIMAL)
+    salario = Column(DECIMAL)  
 
-    id_supervisor = Column(Integer, ForeignKey("supervisor.id"))
-    supervisores = relationship("Supervisor", back_populates="operadores")
-    id_area = Column(Integer, ForeignKey("area.id"))
-    area = relationship("Area", back_populates="operadores")    
-
+    # Claves foraneas 
     id_supervisor = Column(Integer, ForeignKey("supervisor.id"))
     id_area = Column(Integer, ForeignKey("area.id"))
 
