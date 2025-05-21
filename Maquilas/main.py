@@ -4,7 +4,6 @@ from entities.supervisor import Supervisor
 from persistence.db import SessionLocal
 from datetime import datetime
 
-
 session = SessionLocal()
 
 ### Area ###
@@ -39,9 +38,6 @@ def deleteArea(id):
         print(f"\nSe eliminó el registro: {area.departamento}")
     else:
         print("El Área ingresada no existe")
-
-
-
 
 ### Operador ###
 def obtener_operador_por_id(id_operador):
@@ -98,9 +94,6 @@ def deleteOperador(id):
         print(f"\nSe eliminó el operador: {operador.nombre}")
     else:
         print("El operador ingresado no existe")
-        
-
-
 
 ### Supervisor ###
 def getSupervisor():
@@ -136,7 +129,6 @@ def deleteSupervisor(id):
         print(f"\nSe eliminó el supervisor: {supervisor.nombre}")
     else:
         print("El supervisor ingresado no existe")
-        
 
 ### Menu principal ###
 def menu_principal():
@@ -228,9 +220,6 @@ def menu_Area():
 
         else:
             print("Ingrese una opción válida")
-
-
-
 
 ### Menu Operador ###
 def menu_Operador():
@@ -336,9 +325,6 @@ def menu_Operador():
 
         else:
             print("Ingrese una opción valida")
-        
-
-
 
 ### Menu Supervisor ###
 def menu_Supervisor():

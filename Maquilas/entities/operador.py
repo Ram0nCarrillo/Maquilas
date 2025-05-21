@@ -2,7 +2,6 @@ from sqlalchemy import Column, Integer, String, DECIMAL, Date, CHAR, ForeignKey
 from sqlalchemy.orm import relationship
 from persistence.base import Base
 
-
 class Operador(Base):
     __tablename__ = 'operador'
     id = Column(Integer, primary_key = True)

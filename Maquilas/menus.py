@@ -57,14 +57,6 @@ class App(tk.Tk):
         entry_frame = ttk.Frame(area_frame)
         entry_frame.pack(pady=10)
 
-        ttk.Label(entry_frame, text="Departamento").grid(row=0, column=0)
-        self.dep_entry = ttk.Entry(entry_frame)
-        self.dep_entry.grid(row=0, column=1)
-
-        ttk.Label(entry_frame, text="Descripción").grid(row=1, column=0)
-        self.desc_entry = ttk.Entry(entry_frame)
-        self.desc_entry.grid(row=1, column=1)
-
         self.load_areas()
 
     def load_areas(self):
