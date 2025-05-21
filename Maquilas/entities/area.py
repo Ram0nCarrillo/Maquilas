@@ -8,5 +8,6 @@ class Area(Base):
     departamento = Column(String, nullable=False)
     descripcion = Column(TEXT)
     
+    # Relaciones 
     supervisores = relationship("Supervisor", back_populates="area")
     operadores = relationship("Operador", back_populates="area")

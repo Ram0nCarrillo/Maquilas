@@ -4,7 +4,6 @@ from entities.supervisor import Supervisor
 from persistence.db import SessionLocal
 from datetime import datetime
 
-
 session = SessionLocal()
 
 ### Area ###
